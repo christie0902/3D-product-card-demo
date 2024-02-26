@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #190707;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  transform-style: preserve-3d;
+}
+
+.container .box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(82, 54, 148, 0.6937368697478992) 46%,
+    rgba(105, 6, 26, 1) 100%
+  );
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 10px 25px rgba(0, 0, 0, 0.15); /* Deeper shadow */ /* Softer outer glow */
+}
+
+.container .box::before {
+  content: "Resident";
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+}
+
+.container .box::after {
+  content: "Evil";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+  transition: 0.5%;
+}
+
+.container .box:hover::before,
+.container .box:hover::after {
+  opacity: 0.04;
+}
+
+.container .name {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  z-index: 10;
+  font-size: 2rem;
+}
+
+.container .box .description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6e5102;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  transition: 0.5%;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box:hover .description {
+  top: 30px;
+  opacity: 1;
+}
+
+.container .add {
+  position: absolute;
+  bottom: -20px;
+  left: 90%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: bold;
+  background: #866406;
+  padding: 10px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: opacity 0.8s, bottom 0.5s; /* Smooth transitions for opacity and bottom */
+  opacity: 0;
+  z-index: 12;
+}
+
+.container .box:hover .add {
+  bottom: 40%;
+  opacity: 1;
+  box-shadow: 10px 0px 0px #4e2d04b3;
+}
+
+.container .box .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: 0.5%;
+  background: #fff;
+  transform-style: preserve-3d;
+  z-index: 10;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 50px);
+}
+
+.container .box .product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  /* Specify the properties to transition and their duration */
+  transition: transform 0.5s, width 0.5s;
+  z-index: 9;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 0px) rotate(5deg);
+}
+
+.container .box:hover .product {
+  transform: translate3d(-50%, -50%, 100px) rotate(5deg);
+  width: 130px;
+}
+
+.container .box .circle,
+.container .box .add {
+  background: #eba074;
+}
