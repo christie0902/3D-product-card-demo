@@ -82,9 +82,9 @@ body {
   top: 0;
   left: 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #6e5102;
+  color: #ffffff;
   width: 100%;
   transform-style: preserve-3d;
   transform: translate3d(0, 0, 75px);
@@ -98,14 +98,14 @@ body {
   opacity: 1;
 }
 
-.container .add {
+.container .box .add {
   position: absolute;
   bottom: -20px;
   left: 90%;
   transform: translateX(-50%);
   color: #fff;
   font-weight: bold;
-  background: #866406;
+  background-color: #c8bda1;
   padding: 10px 30px;
   border-radius: 20px;
   text-decoration: none;
@@ -149,7 +149,7 @@ body {
 
 .container .box:hover .product {
   transform: translate3d(-50%, -50%, 100px) rotate(5deg);
-  width: 130px;
+  width: 135px;
 }
 
 .container .box .circle,

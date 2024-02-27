@@ -16,7 +16,7 @@ const ProductCard = ({ img_url, product_name, description }) => {
     <div className="container">
       <h2 className="name">{product_name}</h2>
       <div className="box" ref={tiltRef}>
-        <p className="description">{description}</p>
+        <h2 className="description">{description}</h2>
         <a href="#" className="add">
           ADD
         </a>
